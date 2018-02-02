@@ -8,21 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		30DE5A7E202458DD00F68C6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DE5A7D202458DD00F68C6F /* AppDelegate.swift */; };
-		30DE5A80202458DD00F68C6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DE5A7F202458DD00F68C6F /* ViewController.swift */; };
+		30DE5A80202458DD00F68C6F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DE5A7F202458DD00F68C6F /* HomeVC.swift */; };
 		30DE5A83202458DD00F68C6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30DE5A81202458DD00F68C6F /* Main.storyboard */; };
 		30DE5A85202458DD00F68C6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30DE5A84202458DD00F68C6F /* Assets.xcassets */; };
 		30DE5A88202458DD00F68C6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30DE5A86202458DD00F68C6F /* LaunchScreen.storyboard */; };
+		30DE5A92202473FB00F68C6F /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DE5A91202473FB00F68C6F /* PurchaseManager.swift */; };
 		C57F8A495F871DE4A195258A /* Pods_daily_dose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66A845443032FE770EC4E6E /* Pods_daily_dose.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30DE5A7A202458DD00F68C6F /* daily-dose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "daily-dose.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30DE5A7D202458DD00F68C6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		30DE5A7F202458DD00F68C6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		30DE5A7F202458DD00F68C6F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		30DE5A82202458DD00F68C6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30DE5A84202458DD00F68C6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30DE5A87202458DD00F68C6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30DE5A89202458DD00F68C6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30DE5A91202473FB00F68C6F /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		62167A50EF5F937E814B69FD /* Pods-daily-dose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daily-dose.release.xcconfig"; path = "Pods/Target Support Files/Pods-daily-dose/Pods-daily-dose.release.xcconfig"; sourceTree = "<group>"; };
 		8D2FDDAB0839C61E431B31D9 /* Pods-daily-dose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daily-dose.debug.xcconfig"; path = "Pods/Target Support Files/Pods-daily-dose/Pods-daily-dose.debug.xcconfig"; sourceTree = "<group>"; };
 		E66A845443032FE770EC4E6E /* Pods_daily_dose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daily_dose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,14 +63,31 @@
 		30DE5A7C202458DD00F68C6F /* daily-dose */ = {
 			isa = PBXGroup;
 			children = (
+				30DE5A90202473E900F68C6F /* Services */,
+				30DE5A8F202473AF00F68C6F /* Controller */,
 				30DE5A7D202458DD00F68C6F /* AppDelegate.swift */,
-				30DE5A7F202458DD00F68C6F /* ViewController.swift */,
 				30DE5A81202458DD00F68C6F /* Main.storyboard */,
 				30DE5A84202458DD00F68C6F /* Assets.xcassets */,
 				30DE5A86202458DD00F68C6F /* LaunchScreen.storyboard */,
 				30DE5A89202458DD00F68C6F /* Info.plist */,
 			);
 			path = "daily-dose";
+			sourceTree = "<group>";
+		};
+		30DE5A8F202473AF00F68C6F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				30DE5A7F202458DD00F68C6F /* HomeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		30DE5A90202473E900F68C6F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				30DE5A91202473FB00F68C6F /* PurchaseManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		3B1646C87938E770AE7EEF09 /* Pods */ = {
@@ -211,7 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30DE5A80202458DD00F68C6F /* ViewController.swift in Sources */,
+				30DE5A80202458DD00F68C6F /* HomeVC.swift in Sources */,
+				30DE5A92202473FB00F68C6F /* PurchaseManager.swift in Sources */,
 				30DE5A7E202458DD00F68C6F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
