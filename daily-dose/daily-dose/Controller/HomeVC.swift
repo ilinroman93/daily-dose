@@ -17,7 +17,10 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUpAds()
+    }
+    
+    func setUpAds() {
         if UserDefaults.standard.bool(forKey: PurchaseManager.instance.IAP_REMOVE_ADS) {
             removeAdsBtn.removeFromSuperview()
             bannerView.removeFromSuperview()
@@ -26,15 +29,22 @@ class HomeVC: UIViewController {
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
         }
-        
-        
     }
+    
+    @IBAction func restoreBtnPressed(_ sender: Any) {
+        PurchaseManager.instance.restorePurchases { (success) in
+            if success {
+                self.setUpAds()
+            }
+        }
+    }
+    
 
     @IBAction func removeAdsPressed(_ sender: Any) {
         // show loading spinner Activity indicator
         PurchaseManager.instance.purchaseRemoveAds { (success) in
             // dismiss the spinner
-            if succes {
+            if success {
                 self.bannerView.removeFromSuperview()
                 self.removeAdsBtn.removeFromSuperview()
             } else {
